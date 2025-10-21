@@ -4,6 +4,7 @@ export default class ClassComponent extends Component {
     state = {
         name: "State Management"
     }
+  
     render() {
         return (
             <div>

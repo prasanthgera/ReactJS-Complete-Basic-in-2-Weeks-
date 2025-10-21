@@ -1,7 +1,6 @@
 import { useState } from "react"
 
 const FormInput = () => {
-
     const [userName,setname]=useState('')
     const [newval,setVal]=useState('')
     const chnageValue=(event)=>{

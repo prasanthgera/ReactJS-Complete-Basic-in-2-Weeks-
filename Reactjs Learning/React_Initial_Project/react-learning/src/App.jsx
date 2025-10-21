@@ -2,6 +2,7 @@ import FormInput from "./Day1/FormInput"
 import Sample from "./Day1/sample"
 import ClassComponent from "./Day1/ClassComponent"
 import Usestateffect from "./Day1/usestateffect"
+import LifeCycleMethods from "./Day2/LifeCycleMethods"
 
 const obj={
   props:'props Concept',
@@ -21,6 +22,7 @@ function App() {
       <Sample name={obj} />
       <FormInput />
       <Usestateffect />
+      <LifeCycleMethods/>
       
     </div>
     </center>

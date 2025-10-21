@@ -3,15 +3,15 @@ import { useEffect, useState } from "react"
 const Usestateffect = () => {
     const [inputval,setinputVal]=useState('InitialValue')
 
-    useEffect(()=>{
- if(inputval==='InitialValue'){
-    setinputVal('Good')
+  useEffect(() => {
+    if (inputval === 'InitialValue') {
+      setinputVal('Good')
 
-   }else{
-    setinputVal('Not Good')
-   }
+    } else {
+      setinputVal('Not Good')
+    }
 
-    },[inputval])
+  }, [inputval])
   
   return (
     <div>
