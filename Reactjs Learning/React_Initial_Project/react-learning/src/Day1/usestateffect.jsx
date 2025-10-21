@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react"
 
 const Usestateffect = () => {
-    const [inputval,setinputVal]=useState('InitialValue')
+    const [inputval,setinputVal]=useState([])
 
   useEffect(() => {
-    if (inputval === 'InitialValue') {
-      setinputVal('Good')
+   
+    fetch("https://jsonplaceholder.typicode.com/users").then((e)=>e.json()).then((res)=>setinputVal(res)).catch((re)=>re)
+    
 
-    } else {
-      setinputVal('Not Good')
-    }
-
-  }, [inputval])
+  }, [])
   
   return (
     <div>
             <h2 style={{color:'green'}}>Use State & Effect Concept</h2>
+{inputval.map((res)=>(
+        <p>{res.name}</p>
 
-        <h2>{inputval}</h2>
+))}
     </div>
   )
 }

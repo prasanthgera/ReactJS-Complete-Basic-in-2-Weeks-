@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 export default class ClassComponent extends Component {
     state = {
-        name: "State Management"
+        name: "State management",
+        Forname:"write in class-component"
     }
   
     render() {
@@ -13,7 +14,7 @@ export default class ClassComponent extends Component {
                 <h2 style={{ color: 'Green' }}>
                      Class Component
                 </h2>                <div>
-                    <h2>state Concept: {this.state.name}</h2>
+                    <h2>state Concept: {this.state.name} {this.state.Forname}</h2>
                 </div>
             </div>
         )

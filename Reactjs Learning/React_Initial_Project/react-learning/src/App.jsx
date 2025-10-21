@@ -3,6 +3,7 @@ import Sample from "./Day1/sample"
 import ClassComponent from "./Day1/ClassComponent"
 import Usestateffect from "./Day1/usestateffect"
 import LifeCycleMethods from "./Day2/LifeCycleMethods"
+import FunctionReturn from "./Day2/test"
 
 const obj={
   props:'props Concept',
@@ -13,21 +14,26 @@ const obj={
 }
 
 
+
 function App() {
   
   return (
+    
     <center>
       <div>
+        
         <ClassComponent/>
       <Sample name={obj} />
-      <FormInput />
+      <FormInput name={obj.Surname}/>
       <Usestateffect />
       <LifeCycleMethods/>
+      <FunctionReturn/>
       
     </div>
     </center>
     
   )
+
 }
 
 export default App
