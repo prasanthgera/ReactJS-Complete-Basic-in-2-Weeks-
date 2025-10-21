@@ -17,6 +17,9 @@ const Usestateffect = () => {
         <p>{res.name}</p>
 
 ))}
+{inputval.map((res1)=>(
+  <h1>{res1.email}</h1>
+))}
     </div>
   )
 }
