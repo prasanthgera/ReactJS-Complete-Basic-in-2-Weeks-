@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent } from "react"
 import { useNavigate } from "react-router-dom"
 
-const Dashboard = () => {
+const Dashboard  = () => {
     const [input,setInput]=useState('')
     const [passwd,setPasswd]=useState('')
     const navigate=useNavigate()
@@ -24,7 +24,7 @@ const Dashboard = () => {
 
         }
         if(input==='prasanthgera@44' && passwd==='544'){
-            navigate("/navbar");
+            navigate("/home");
            setPasswd('')
   
         }

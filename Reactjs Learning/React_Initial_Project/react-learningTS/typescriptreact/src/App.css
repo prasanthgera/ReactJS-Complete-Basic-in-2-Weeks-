@@ -1,4 +1,4 @@
-.mobileProject{
+.mobile{
   display: flex;
   gap: 20px;
   background: rgb(123, 103, 103);
@@ -10,4 +10,7 @@
   display: flex;
   background: black;
   color: white;
+}
+.img{
+  display: flex;
 }

@@ -1,27 +1,29 @@
 import { useState, type ChangeEvent } from "react"
-import {Link } from "react-router-dom"
-import { testValue } from "../mobile"
+import { Link } from "react-router-dom"
+import Storedata from "./Storedata"
+import { useSelector } from "react-redux"
+import type { RootState } from "@reduxjs/toolkit/query"
 
-function Navbar() {
+function HomePage() {
     const [searchValue, setSearchValue] = useState('')
-    const [seMobile,setMobile]=useState(false)
+    const [seMobile, setMobile] = useState(false)
+      const count = useSelector((state:RootState) => state.updatedValue.value)
+  
     const onchangedData = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event.target.value)
     }
 
 
-    const searchValues=()=>{
-         if(searchValue==='Mobiles'){
+    const searchValues = () => {
+        const selecteInputVal = 'Mobile';
+        if (searchValue === selecteInputVal.toLowerCase()) {
             setMobile(true)
-        }else{
+        } else {
             alert('Please enter any search value')
         }
-        
+
     }
-
-  
-
-
+ 
 
     return (
         <>
@@ -34,7 +36,7 @@ function Navbar() {
                     <button onClick={searchValues}>Search</button>
                 </div>
                 <div>
-                    <h2>Cart</h2>
+                    <h2>Cart{count} </h2>
                 </div>
                 <div>
                     <Link to="/">
@@ -45,22 +47,15 @@ function Navbar() {
 
             </div>
             {seMobile && (
-        <div className="mobileProject">
-          {testValue.map((item, index) => (
-            <div className="img" key={index}>
-              <img src={item.image} alt={item.model} width="150" />
-              <h3>{item.company}</h3>
-              <p>{item.model}</p>
-              <p>${item.price}</p>
-            </div>
-          ))}
-        </div>
-      )
+                <Storedata/>
+            )
+
 
             }
-
+            {
+                
+            }
         </>
     )
 }
-
-export default Navbar
+export default HomePage
