@@ -17,9 +17,11 @@ const Aeello_1 = () =>{
 
 function Sample(props) {
   return (
+    
     <div>
       <Aeello />
       <Aeello_1 />
+
             <h2>{props.name.props}: {props.name.Forname}-{props.name.Surname}</h2>
 
     </div>

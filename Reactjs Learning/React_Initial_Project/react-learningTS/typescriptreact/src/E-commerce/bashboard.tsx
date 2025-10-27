@@ -31,7 +31,7 @@ const Dashboard  = () => {
     }
 
     return (
-        <div>
+        <div >
             <center>
                 <div>
                     <h2>Login</h2>
