@@ -1,26 +1,49 @@
-import React from 'react'
-import { TableCell, TableHead, TableRow  } from "@material-ui/core"
+import { Table, TableCell, TableHead, TableRow ,TableBody, Paper } from "@material-ui/core"
+import {useEffect,  useState } from "react"
 
 function FormGrid() {
-     const rows = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
-  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
-  { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
-  { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-  { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
-];
+
+   const [inputval,setinputVal]=useState([])
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users").then((e)=>e.json()).then((res)=>setinputVal(res)).catch((re)=>re)
+  }, [])
+console.log('res :', inputval);
   return (
-     <TableHead>
-      <TableRow>
-          {rows.map((res)=>{
-            <TableCell key={res.id}></TableCell>
-          })
+    <div>
+        <h1>Form Validate</h1>
+        <Paper>
+          <Table>
+              <TableHead>
 
-          }
+                  <TableRow>
+                      {inputval.map((res) => (
+                          //console.log('res :', res);
+                          <TableCell key={res.id}>{res.name}</TableCell>
+                      ))
+
+                      }
 
 
-      </TableRow>
-    </TableHead>
+                  </TableRow>
+                <TableBody>
+          {inputval.map(row => (
+            <TableRow key={row.id}>
+            
+              <TableCell >{row.name}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+            
+          ))}
+        </TableBody>
+              </TableHead>
+          </Table>
+          </Paper>
+
+    </div>
+    
   )
 }
 

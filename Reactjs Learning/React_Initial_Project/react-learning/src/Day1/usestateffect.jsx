@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react"
+import { useDispatch } from 'react-redux';
+import { thunkData } from "../Redux/AuthSlice";
 
 const Usestateffect = () => {
     const [inputval,setinputVal]=useState([])
+  const dispatch = useDispatch();
 
   useEffect(() => {
    
     fetch("https://jsonplaceholder.typicode.com/users").then((e)=>e.json()).then((res)=>setinputVal(res)).catch((re)=>re)
     
+    console.log(dispatch(thunkData()),'test');
 
-  }, [])
+  }, [dispatch])
+
   
   return (
     <div>

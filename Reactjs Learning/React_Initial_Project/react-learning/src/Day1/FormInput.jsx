@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react"
+import {  useState,useEffect } from "react"
+// import { thunkData } from "../Redux/AuthSlice";
+// import { useDispatch } from "react-redux";
 
 
 const FormInput = (names) => {
+    //  const dispatch = useDispatch();
+
   const [newval, setVal] = useState('')
   const [data, setData] = useState({
     username: '',
@@ -9,12 +13,11 @@ const FormInput = (names) => {
     confirmPasswd: '',
     email: ''
   })
-      const [inputval,setinputVal]=useState([])
-
-  const { userName, password, confirmPasswd, email } = data
+    //  const [inputval,setinputVal]=useState([])
+      const { userName, password, confirmPasswd, email } = data
   useEffect(() => {
      
-      fetch("https://jsonplaceholder.typicode.com/users").then((e)=>e.json()).then((res)=>setinputVal(res)).catch((re)=>re)
+  // dispatch(thunkData(newval))
       
   
     }, [])
@@ -33,7 +36,8 @@ const FormInput = (names) => {
       alert('FormValidation is successfully signin')
     }
  //   console.log(data)
-    setVal(newval)
+    setVal(newval);
+
   }
  
 
@@ -56,24 +60,7 @@ const FormInput = (names) => {
       
     </div>
    
-    {/* <GridList cellHeight={200} cols={3} style={{ width: 800, height: 600 }}>
-    {inputval.map((res)=>{
-    console.log('res :', res);
-      <GridListTile key={data.id}>
-                      <p>{res.name}</p>
-                      <GridListTileBar
-              title={data.name}
-            
-            />
-      </GridListTile>
-
-
-
-
-    })
-
-    }
-    </GridList> */}
+    
     </div>
 
    
