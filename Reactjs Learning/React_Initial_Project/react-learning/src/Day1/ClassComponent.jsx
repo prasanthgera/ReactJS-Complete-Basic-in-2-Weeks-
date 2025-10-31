@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
 
 export default class ClassComponent extends Component {
-    state = {
-        name: "State management",
-        Forname:"write in class-component"
-    }
+    // constructor(){
+    //     super()
+     
+    // }
+       state={
+            name:'',
+            Forname:'',
+            count:0
+        }
+   
   
     render() {
         return (
             <div>
-                <h1 style={{color:'red'}}>Welcome To ReactJS</h1>
+                <h1 style={{ color: 'red' }}>Welcome To ReactJS</h1>
 
                 <h2 style={{ color: 'Green' }}>
-                     Class Component
-                </h2>                <div>
-                    <h2>state Concept: {this.state.name} {this.state.Forname}</h2>
+                    Class Component
+                </h2>      
+                <div>
+                    <h2>state Concept: {this.state.name} {this.state.Forname}{this.state.count}</h2>
                 </div>
+                <button onClick={()=>this.setState({count:this.state.count+1})}>Click</button>
             </div>
         )
     }

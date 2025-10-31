@@ -1,8 +1,10 @@
-// store.js
-import { configureStore } from '@reduxjs/toolkit';
-
-export const store = configureStore({
+import { configureStore } from "@reduxjs/toolkit";
+import { reducerData } from "../Day 5/reducer";
+const store = configureStore({
   reducer: {
-    users: 'test',
+    counter: reducerData,
+
   },
 });
+
+export default store; 
